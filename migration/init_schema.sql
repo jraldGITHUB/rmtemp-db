@@ -1,0 +1,17 @@
+START TRANSACTION;
+
+CREATE TABLE rooms (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    room_name VARCHAR(100) UNIQUE NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE devices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    room_id INT NOT NULL,
+    device_name VARCHAR(100) NOT NULL,
+    device_type VARCHAR(50) NOT NULL,
+    FOREIGN KEY (room_id) REFERENCES rooms(id)
+) ENGINE=InnoDB;
+
+
+COMMIT;
