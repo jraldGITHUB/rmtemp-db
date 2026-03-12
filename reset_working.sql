@@ -6,6 +6,8 @@ DROP TABLE IF EXISTS device_status_logs;
 DROP TABLE IF EXISTS temperature_logs;
 DROP TABLE IF EXISTS devices;
 DROP TABLE IF EXISTS rooms;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS user_activity_logs;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
