@@ -1,14 +1,9 @@
 START TRANSACTION;
 
-INSERT INTO rooms (room_name)
-VALUES ('Room 101');
+INSERT INTO temperature_logs 
+(device_id, roomTemp, exhaustTemp, aircon, exhaustFan)
+VALUES
 
-INSERT INTO devices (room_id, device_name, device_type)
-VALUES 
-(1, 'Temperature Sensor', 'SENSOR'),
-(1, 'Air Conditioner', 'AIRCON');
+(1, 27, 23, 'ON', 'ON');
 
-INSERT INTO temperature_logs (device_id, temperature)
-VALUES (1, 28.00);
-
-COMMIT;
+SELECT * FROM temperature_logs;

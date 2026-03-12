@@ -1,6 +1,5 @@
 START TRANSACTION;
 
-
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
@@ -32,16 +31,11 @@ CREATE TABLE devices (
 CREATE TABLE temperature_logs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     device_id INT NOT NULL,
-    temperature DECIMAL(5,2) NOT NULL,
+    roomTemp INT,
+    exhaustTemp INT,
+    aircon VARCHAR(10),
+    exhaustFan VARCHAR(10),
     recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (device_id) REFERENCES devices(id)
-) ENGINE=InnoDB;
-
-CREATE TABLE device_status_logs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    device_id INT NOT NULL,
-    status VARCHAR(10) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (device_id) REFERENCES devices(id)
 ) ENGINE=InnoDB;
 
